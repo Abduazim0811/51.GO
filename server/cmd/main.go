@@ -18,9 +18,8 @@ func main() {
 		log.Println(err)
 		log.Fatal("DB connection could not be set")
 	}
-	storage := db.NewStorage(database)
-	userService := db.NewUserHandler(storage)
-	rpc.Register(userService)
+	userService := db.NewUserHandler(database)
+    rpc.Register(userService)
 
 	listener, err := net.Listen("tcp", ":1234")
 	if err != nil {

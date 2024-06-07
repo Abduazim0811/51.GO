@@ -10,7 +10,7 @@ type UserService struct {
 	DB *sql.DB
 }
 
-func NewUserHandler(db *db.Storage) *UserService {
+func NewUserHandler(db *sql.DB) *UserService {
 	return &UserService{DB: db}
 }
 
